@@ -1,0 +1,57 @@
+<div class="navbar">
+<a href="#" id="prevButton" class="nav-button">↤</a>
+<span class="nav-title" style="color: #888888">TooDY, a Tool for Detecting variabilitY</span>
+<a href="#" id="nextButton" class="nav-button">↦</a>
+</div>
+
+
+<!-- <script> -->
+<!--     document.addEventListener('DOMContentLoaded', (event) => { -->
+<!--       const pageName = window.location.pathname.split("/").pop(); -->
+<!--       let prevPage, nextPage; -->
+
+<!--       if(pageName === 'index.html' || pageName === '') { -->
+<!--           // Se sei sulla pagina index, imposta la navigazione per andare alla prima e ultima slide -->
+<!--           prevPage = 'slide10.html'; -->
+<!--           nextPage = 'slide01.html'; -->
+<!--       } else { -->
+<!--           // Altrimenti, estrai il numero della slide e calcola prev e next -->
+<!--           const pageIndex = parseInt(pageName.match(/\d+/)[0], 10); -->
+<!--           prevPage = pageIndex === 1 ? 'index.html' : `slide${String(pageIndex - 1).padStart(2, '0')}.html`; -->
+<!--           nextPage = pageIndex === 10 ? 'index.html' : `slide${String(pageIndex + 1).padStart(2, '0')}.html`; -->
+<!--       } -->
+
+<!--       // Imposta gli attributi href per i bottoni di navigazione -->
+<!--       document.getElementById('prevButton').setAttribute('href', prevPage); -->
+<!--       document.getElementById('nextButton').setAttribute('href', nextPage); -->
+<!--     }); -->
+<!-- </script> -->
+
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const pageName = window.location.pathname.split("/").pop();
+    const navbar = document.querySelector('.navbar');
+    let prevPage, nextPage;
+
+    if (pageName === 'index.html' || pageName === '') {
+        // Se sei sulla pagina index, nascondi la navbar
+        if(navbar) navbar.style.display = 'none';
+        prevPage = 'slide09.html';
+        nextPage = 'slide01.html';
+    } else {
+        // Altrimenti, estrai il numero della slide e calcola prev e next
+
+        const pageIndex = parseInt(pageName.match(/\d+/) ? pageName.match(/\d+/)[0] : '1', 10);
+        prevPage = pageIndex === 1 ? 'index.html' : `slide${String(pageIndex - 1).padStart(2, '0')}.html`;
+        nextPage = pageIndex === 9 ? 'index.html' : `slide${String(pageIndex + 1).padStart(2, '0')}.html`;
+        // const pageIndex = parseInt(pageName.match(/\d+/) ? pageName.match(/\d+/)[0] : '1', 10);
+        // prevPage = pageIndex === 1 ? 'index.html' : `slide${String(pageIndex - 1).padStart(2, '0')}.html`;
+        // nextPage = pageIndex === 10 ? 'index.html' : `slide${String(pageIndex + 1).padStart(2, '0')}.html`;
+
+        // Imposta gli attributi href per i bottoni di navigazione
+        document.getElementById('prevButton').setAttribute('href', prevPage);
+        document.getElementById('nextButton').setAttribute('href', nextPage);
+    }
+});
+</script>

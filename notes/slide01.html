@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>presentazione_auxilium – slide01</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%237d6ee7%22></rect><path d=%22M32.27 77.81L32.27 77.81Q28.31 77.81 28.31 74.57L28.31 74.57L28.31 23.72Q29.93 22.10 33.17 22.10L33.17 22.10Q35.33 22.10 36.86 22.95Q38.39 23.81 39.65 26.06L39.65 26.06L56.84 54.86Q57.92 56.75 59.09 58.86Q60.26 60.98 61.34 63.09Q62.42 65.21 63.36 67.06Q64.31 68.90 64.94 70.16L64.94 70.16L65.30 70.07Q64.58 62.78 64.44 55.40Q64.31 48.02 64.31 41L64.31 41L64.31 22.82Q64.85 22.64 65.75 22.41Q66.65 22.19 67.73 22.19L67.73 22.19Q71.69 22.19 71.69 25.43L71.69 25.43L71.69 76.37Q70.88 77.09 69.62 77.50Q68.36 77.90 66.83 77.90L66.83 77.90Q64.67 77.90 63.14 77.05Q61.61 76.19 60.35 73.94L60.35 73.94L43.25 45.14Q42.17 43.34 40.95 41.18Q39.74 39.02 38.61 36.95Q37.49 34.88 36.55 32.99Q35.60 31.10 34.97 29.84L34.97 29.84L34.61 29.93Q35.06 34.25 35.33 39.79Q35.60 45.32 35.60 50.27L35.60 50.27L35.60 77.18Q35.15 77.36 34.20 77.58Q33.26 77.81 32.27 77.81Z%22 fill=%22%23fff%22></path></svg>" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu Mono">
+  <link rel="stylesheet" href="https://latex.now.sh/style.css">
+  <link rel="stylesheet" href="https://latex.now.sh/prism/prism.css">
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+  <style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        font-family: 'Libertinus';
+        font-size: 180%;
+        max-width: 80rem;
+        line-height: 1.4;
+        color: black;
+        background: white;
+    }
+    code, pre, kbd {
+        font-family: 'Ubuntu Mono', monospace;
+        font-size: 95%;
+    }
+    blockquote {
+        font-style: italic;
+        border: 1px solid black;
+        border-radius: 4px;
+        background: #e9edf3;
+        padding: 1rem 3rem 2rem 3rem;
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+    hr {
+        width: 50%;
+        height: 1px;
+        border: none;
+        background: gray;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    a {
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: none;
+    }
+    .navbar {
+        font-weight: bold;
+        overflow: hidden;
+        background-color: #f0f0f0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        z-index: 1000;
+    }
+    .nav-button,.nav-button:visited {
+        padding: 10px 20px;
+        margin: 10px;
+        background-color: #006600;
+        color: white;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+    .nav-button:hover {
+        background-color: #338433;
+    }
+    .nav-title {
+        color: black;
+        font-size: 24px;
+    }
+    h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+    h2 {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+<div class="navbar">
+<a href="#" id="prevButton" class="nav-button">↤</a>
+<span class="nav-title" style="color: #888888">TooDY, a Tool for Detecting variabilitY</span>
+<a href="#" id="nextButton" class="nav-button">↦</a>
+</div>
+
+
+<!-- <script> -->
+<!--     document.addEventListener('DOMContentLoaded', (event) => { -->
+<!--       const pageName = window.location.pathname.split("/").pop(); -->
+<!--       let prevPage, nextPage; -->
+
+<!--       if(pageName === 'index.html' || pageName === '') { -->
+<!--           // Se sei sulla pagina index, imposta la navigazione per andare alla prima e ultima slide -->
+<!--           prevPage = 'slide10.html'; -->
+<!--           nextPage = 'slide01.html'; -->
+<!--       } else { -->
+<!--           // Altrimenti, estrai il numero della slide e calcola prev e next -->
+<!--           const pageIndex = parseInt(pageName.match(/\d+/)[0], 10); -->
+<!--           prevPage = pageIndex === 1 ? 'index.html' : `slide${String(pageIndex - 1).padStart(2, '0')}.html`; -->
+<!--           nextPage = pageIndex === 10 ? 'index.html' : `slide${String(pageIndex + 1).padStart(2, '0')}.html`; -->
+<!--       } -->
+
+<!--       // Imposta gli attributi href per i bottoni di navigazione -->
+<!--       document.getElementById('prevButton').setAttribute('href', prevPage); -->
+<!--       document.getElementById('nextButton').setAttribute('href', nextPage); -->
+<!--     }); -->
+<!-- </script> -->
+
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const pageName = window.location.pathname.split("/").pop();
+    const navbar = document.querySelector('.navbar');
+    let prevPage, nextPage;
+
+    if (pageName === 'index.html' || pageName === '') {
+        // Se sei sulla pagina index, nascondi la navbar
+        if(navbar) navbar.style.display = 'none';
+        prevPage = 'slide09.html';
+        nextPage = 'slide01.html';
+    } else {
+        // Altrimenti, estrai il numero della slide e calcola prev e next
+
+        const pageIndex = parseInt(pageName.match(/\d+/) ? pageName.match(/\d+/)[0] : '1', 10);
+        prevPage = pageIndex === 1 ? 'index.html' : `slide${String(pageIndex - 1).padStart(2, '0')}.html`;
+        nextPage = pageIndex === 9 ? 'index.html' : `slide${String(pageIndex + 1).padStart(2, '0')}.html`;
+        // const pageIndex = parseInt(pageName.match(/\d+/) ? pageName.match(/\d+/)[0] : '1', 10);
+        // prevPage = pageIndex === 1 ? 'index.html' : `slide${String(pageIndex - 1).padStart(2, '0')}.html`;
+        // nextPage = pageIndex === 10 ? 'index.html' : `slide${String(pageIndex + 1).padStart(2, '0')}.html`;
+
+        // Imposta gli attributi href per i bottoni di navigazione
+        document.getElementById('prevButton').setAttribute('href', prevPage);
+        document.getElementById('nextButton').setAttribute('href', nextPage);
+    }
+});
+</script>
+<section id="software-product-lines-variabilità" style="margin-top: 80px;">
+<h1>Software Product Lines &amp; Variabilità</h1>
+<section id="scopo-del-progetto" style="flex: 1; border-radius: 4px; background: #ffcccc; padding: 1.5rem; margin-right: 5px; margin-left: 5px;">
+<h2>Scopo del Progetto</h2>
+<p>Realizzare uno strumento di elaborazione del linguaggio naturale, per individuare indicatori di variabilità in un documento dei requisiti.</p>
+</section>
+<div style="flex: 1; padding: 2.5rem; padding-left: 8rem; padding-right: 8rem; margin-right: 5px; margin-left: 5px; font-style: italic; font-size: 120%;">
+<p>Il progetto implementa una web-app <b>Flask</b>, che esegue analisi lessicale e sintattica, con il supporto della libreria open-source <b>spaCy</b>.</p>
+</div>
+<div style="display: flex; justify-content: space-between; margin-top: 20px">
+<section id="spl-engineering" style="flex: 1; border-radius: 4px; background: #ccccff; padding: 1.5rem; margin-right: 5px; margin-left: 5px;">
+<h2>SPL Engineering</h2>
+<p>Paradigma di sviluppo software che modella le caratteristiche comuni e quelle di variabilità di una famiglia di sistemi, al fine di massimizzare il riutilizzo e ridurre i costi di sviluppo.</p>
+</section>
+<section id="variabilità-in-un-requisito" style="flex: 1; border-radius: 4px; background: #ccccff; padding: 1.5rem; margin-right: 5px; margin-left: 5px;">
+<h2>Variabilità in un requisito</h2>
+<p>Rappresenta la capacità di corrispondere a più possibili configurazioni e di essere modificato o esteso a seconda del contesto specifico in cui viene implementato.</p>
+</section>
+</div>
+</section>
+<nav class="site-nav" style="font-size:70%">
+    <!-- footer content -->
+</nav>
+</body>
+</html>
